@@ -1,23 +1,5 @@
-"""
-url_problem = https://leetcode.com/problems/merge-strings-alternately/?envType=study-plan-v2&envId=leetcode-75
-
-Вам даны две строки word1 и word2. Объедините строки, добавляя буквы в порядке их чередования,начиная со строки
-слово1.
-Если одна из строк длиннее другой, добавьте дополнительные буквы в конец объединенной строки.
-Возвращаем объединенную строку.
-
-Example 1:
-Input: word1 = "abc", word2 = "pqr"
-Output: "apbqcr"
-
-Example 2:
-Input: word1 = "ab", word2 = "pqrs"
-Output: "apbqrs"
-
-Example 3:
-Input: word1 = "abcd", word2 = "pq"
-Output: "apbqcd"
-"""
+url_problem = ("https://leetcode.com/problems/merge-strings-"
+               "alternately/?envType=study-plan-v2&envId=leetcode-75")
 
 
 class Solution:  # O(n + m)
