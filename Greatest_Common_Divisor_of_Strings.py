@@ -19,7 +19,7 @@ url_problem = https://leetcode.com/problems/greatest-common-divisor-of-strings/d
 """
 
 
-class Solution:
+class Solution:  # O(n)
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         def gcd(a, b):  # Euclidean algorithms
             if a == 0:
