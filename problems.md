@@ -9,9 +9,11 @@
     If a string is longer than the other, append the additional letters onto the end of the merged string.
     Return the merged string.
 
-    Example: Input: word1 = "abc", word2 = "pqr"
+    Example 1: 
+            Input: word1 = "abc", word2 = "pqr"
             Output: "apbqcr"
-    Example 2: Input: word1 = "abcd", word2 = "pq"
+    Example 2: 
+            Input: word1 = "abcd", word2 = "pq"
             Output: "apbqcd"
     
     class Solution:  # O(n + m)
@@ -48,9 +50,11 @@
     (i.e., t is concatenated with itself one or more times).
     Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
 
-    Example: Input: str1 = "ABCABC", str2 = "ABC"
+    Example 1: 
+            Input: str1 = "ABCABC", str2 = "ABC"
             Output: "ABC"
-    Example 2: Input: str1 = "ABABAB", str2 = "ABAB"
+    Example 2: 
+            Input: str1 = "ABABAB", str2 = "ABAB"
             Output: "AB"
     
     class Solution:  # O(n)
@@ -76,9 +80,11 @@
     after we give all children of the i-th child all extra candies, it has the highest number of candies among all children. Otherwise, result[i] is False.
     Note that several children can have the same maximum number of candies.
 
-    Example: Input: candies = [2,3,5,1,3], extraCandies = 3
+    Example 1: 
+            Input: candies = [2,3,5,1,3], extraCandies = 3
             Output: [true,true,true,false,true]
-    Example 2: Input: candies = [4,2,1,1,2], extraCandies = 1
+    Example 2: 
+            Input: candies = [4,2,1,1,2], extraCandies = 1
             Output: [true,false,false,false,false] 
     
     class Solution:  # O(n)
@@ -91,3 +97,35 @@
                 res_list.append(count_candies >= max_candies)
     
             return res_list
+
+
+### [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/?envType=study-plan-v2&envId=leetcode-75)
+    Difficult : Easy
+
+    Given a string s, reverse only all the vowels in the string and return it.
+    The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+    
+    Example 1: 
+            Input: s = "hello"
+            Output: "holle"
+    Example 2: 
+            Input: s = "leetcode"
+            Output: "leotcede" 
+    
+    class Solution:  # O(n)
+        def reverseVowels(self, s: str) -> str:
+            vowels = "aeiouAEIOU"
+            s = list(s)
+            left, right = 0, len(s) - 1
+
+            while left < right:
+                while left < right and s[left] not in vowels:
+                    left += 1
+                while left < right and s[right] not in vowels:
+                    right -= 1
+    
+                s[left], s[right] = s[right], s[left]
+                left += 1
+                right -= 1
+    
+            return ''.join(s)
