@@ -149,7 +149,7 @@
                         flowerbed[i] = 1 # add flower
                         count += 1
             return count >= n
-### [Revers Vowels of a string](https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=leetcode-75)
+### [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=leetcode-75)
     Difficult : Medium
 
     Given an input string s, reverse the order of the words.
