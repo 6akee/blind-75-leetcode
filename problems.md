@@ -41,8 +41,6 @@
                     l += 1
                     r += 1
             return result
-
-
 ### [Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings/?envType=study-plan-v2&envId=leetcode-75)
     Difficult : Easy
 
@@ -69,8 +67,6 @@
             if str1 + str2 != str2 + str1:
                 return ""
             return str1[:diff]
-
-
 ### [Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/?envType=study-plan-v2&envId=leetcode-75)
     Difficult : Easy
 
@@ -97,8 +93,6 @@
                 res_list.append(count_candies >= max_candies)
     
             return res_list
-
-
 ### [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/?envType=study-plan-v2&envId=leetcode-75)
     Difficult : Easy
 
@@ -129,3 +123,29 @@
                 right -= 1
     
             return ''.join(s)
+### [Can Place Flowers](https://leetcode.com/problems/can-place-flowers/description/?envType=study-plan-v2&envId=leetcode-75)
+    Difficult : Easy
+
+    Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, 
+    return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule 
+    and false otherwise.
+
+    Example 1: 
+            Input: flowerbed = [1,0,0,0,1], n = 1
+            Output: true
+    Example 2: 
+            Input: flowerbed = [1,0,0,0,1], n = 1
+            Output: false 
+    
+    class Solution:  # O(n)
+        def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+            count = 0
+            for i in range(len(flowerbed)):
+                if flowerbed[i] == 0:
+                    empty_left_plot = (i == 0) or (flowerbed[i - 1] == 0)
+                    empty_right_lot = (i == len(flowerbed) - 1) or (flowerbed[i + 1] == 0)
+
+                    if empty_left_plot and empty_right_lot:
+                        flowerbed[i] = 1 # add flower
+                        count += 1
+            return count >= n
