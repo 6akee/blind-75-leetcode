@@ -149,3 +149,24 @@
                         flowerbed[i] = 1 # add flower
                         count += 1
             return count >= n
+### [Revers Vowels of a string](https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=leetcode-75)
+    Difficult : Medium
+
+    Given an input string s, reverse the order of the words.
+    A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
+    Return a string of the words in reverse order concatenated by a single space.
+
+    Example 1: 
+            Input: s = "the sky is blue"
+            Output: "blue is sky the"
+    Example 2: 
+            Input: s = "  hello world  "
+            Output: world hello 
+    
+    class Solution: # O(n)
+        def reverseWords(self, s: str) -> str:
+            s = s.strip()
+            s = s.split()
+            result = [s[txt] for txt in range(len(s) - 1, - 1, - 1)]
+    
+            return ' '.join(result)
