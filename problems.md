@@ -1,7 +1,7 @@
 ## Array / String
 
 
-### [Two sum](https://leetcode.com/problems/two-sum/description/)
+### [Two Sum](https://leetcode.com/problems/two-sum/description/)
     Difficult : Easy
 
     Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.

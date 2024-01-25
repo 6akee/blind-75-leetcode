@@ -1,7 +1,4 @@
-# Leetcode 75
+# Leetcode Roadmap
 
-* [Array / String](problems.md/##Array/String)
-  + [Merge Strings Alternately](problems.md/#merge-strings-alternately)
-  + [Greatest Common Divisor of Strings](problems.md/#Greatest-Common-Divisor-of-Strings)
-  + [Kids With the Greatest Number of Candies](problems.md/#Kids-With-the-Greatest-Number-of-Candies)
-  + [Reverse Vowels of a String](problems.md/#Reverse-Vowels-of-a-String)
+* [Array / String](problems.md##array--string)
+  + [Two Sum](problems.md#two-sum)
