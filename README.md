@@ -1,5 +1,7 @@
 # Leetcode Roadmap
 
 * [Array](problems.md##array--string)
-  + [Two Sum](problems.md#two-sum)
-  + [Shuffle the Array](problems.md#shuffle-the-array)
+  + [Build Array from Permutation](problems.md#build-array-from-permutation)
+  + [Concatenation of Array](problems.md#concatenation-of-array)
+  + [Number of Good Pairs](problems.md#number-of-good-pairs)
+
