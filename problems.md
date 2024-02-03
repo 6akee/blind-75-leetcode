@@ -4,9 +4,8 @@
 ### [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/description/)
     Difficult : Easy
 
-    Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
-
-
+    Given a zero-based permutation nums (0-indexed), build an array ans of the same 
+    length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
 
     Example 1: 
             Input: nums = [0,2,1,5,3,4]
@@ -15,7 +14,7 @@
             Input: nums = [5,0,1,2,3,4]
             Output: [4,5,0,1,2,3]
     
-    class Solution:
+    class Solution: # O(n)
         def buildArray(self, nums: List[int]) -> List[int]:
             return [nums[nums[i]] for i in range(len(nums))]
 
@@ -25,9 +24,7 @@
     Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
     Specifically, ans is the concatenation of two nums arrays.
     Return the array ans.
-
-
-
+    
     Example 1: 
             Input: nums = [1,2,1]
             Output: [1,2,1,1,2,1]
@@ -35,7 +32,7 @@
             Input: nums = [1,3,2,1]
             Output: [1,3,2,1,1,3,2,1]
     
-    class Solution:
+    class Solution: # O(n)
         def getConcatenation(self, nums: List[int]) -> List[int]:
             ans = nums.copy()
             for i in nums:
@@ -47,12 +44,7 @@
     Difficult : Easy
 
     Given an array of integers nums, return the number of good pairs.
-
     A pair (i, j) is called good if nums[i] == nums[j] and i < j.
-
-
-
-
 
     Example 1: 
             Input: nums = [1,2,3,1,1,3]
@@ -61,7 +53,7 @@
             Input: nums = [1,1,1,1]
             Output: 6
     
-    class Solution:
+    class Solution: # O(n)
         def numIdenticalPairs(self, nums: List[int]) -> int:
             result = {}
             count = 0
@@ -85,7 +77,7 @@
             Input: nums = [3,2,4], target = 6
             Output: [1, 2]
     
-    class Solution:
+    class Solution: # O(n)
         def twoSum(self, nums: List[int], target: int) -> List[int]:
             map_result = {}
             for index, value in enumerate(nums):
@@ -93,3 +85,28 @@
                 if diff in map_result:
                     return [map_result[diff], index]
                 map_result[index] = value
+
+### [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+    Difficult : Easy
+
+    You are given an array prices where prices[i] is the price of a given stock on the ith day.
+    You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+    Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+    Example 1: 
+            Input: prices = [7,1,5,3,6,4]
+            Output: 4
+    Example 2: 
+            Input: prices = [7,6,4,3,1]
+            Output: 0
+    
+    class Solution: # O(n)
+        def maxProfit(self, prices: List[int]) -> int:
+            profit = 0
+            buy = prices[0]
+            for sell in prices[1:]:
+                if sell > buy:
+                    profit = max(profit, sell - buy)
+                else:
+                    buy = sell
+            return profit
