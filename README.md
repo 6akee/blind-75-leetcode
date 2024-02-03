@@ -4,4 +4,5 @@
   + [Build Array from Permutation](problems.md#build-array-from-permutation)
   + [Concatenation of Array](problems.md#concatenation-of-array)
   + [Number of Good Pairs](problems.md#number-of-good-pairs)
+  + [Two Sum](problems.md#two-sum)
 
