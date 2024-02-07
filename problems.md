@@ -1,45 +1,5 @@
 ## Array
 
-
-### [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/description/)
-    Difficult : Easy
-
-    Given a zero-based permutation nums (0-indexed), build an array ans of the same 
-    length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
-
-    Example 1: 
-            Input: nums = [0,2,1,5,3,4]
-            Output: [0,1,2,4,5,3]
-    Example 2: 
-            Input: nums = [5,0,1,2,3,4]
-            Output: [4,5,0,1,2,3]
-    
-    class Solution: # O(n)
-        def buildArray(self, nums: List[int]) -> List[int]:
-            return [nums[nums[i]] for i in range(len(nums))]
-
-### [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/description/)
-    Difficult : Easy
-
-    Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
-    Specifically, ans is the concatenation of two nums arrays.
-    Return the array ans.
-    
-    Example 1: 
-            Input: nums = [1,2,1]
-            Output: [1,2,1,1,2,1]
-    Example 2: 
-            Input: nums = [1,3,2,1]
-            Output: [1,3,2,1,1,3,2,1]
-    
-    class Solution: # O(n)
-        def getConcatenation(self, nums: List[int]) -> List[int]:
-            ans = nums.copy()
-            for i in nums:
-                ans.append(i)
-                
-            return ans
-
 ### [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/description/)
     Difficult : Easy
 
@@ -132,4 +92,30 @@
                     return True
                 set_nums.add(num)
             return False
-            
+
+### [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+    Difficult : Medium
+
+    Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+    The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+    You must write an algorithm that runs in O(n) time and without using the division operation.
+
+    Example 1: 
+            Input: nums = [1,2,3,4]
+            Output: [24,12,8,6]
+    Example 2: 
+            Input: nums = [-1,1,0,-3,3]
+            Output: [0,0,9,0,0]
+    
+    class Solution: # O(n)
+        def productExceptSelf(self, nums: List[int]) -> List[int]:
+            length = len(nums)
+            products = [1] * length
+            for i in range(1, length):
+                products[i] = products[i - 1] * nums[i - 1]
+            right = nums[-1]
+            for i in range(length-2, -1, -1):
+                products[i] *= right
+                right *= nums[i]
+
+            return products
