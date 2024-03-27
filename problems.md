@@ -1,75 +1,5 @@
-## Array
+## Arrays & Hashing
 
-### [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/description/)
-    Difficult : Easy
-
-    Given an array of integers nums, return the number of good pairs.
-    A pair (i, j) is called good if nums[i] == nums[j] and i < j.
-
-    Example 1: 
-            Input: nums = [1,2,3,1,1,3]
-            Output: 4
-    Example 2: 
-            Input: nums = [1,1,1,1]
-            Output: 6
-    
-    class Solution: # O(n)
-        def numIdenticalPairs(self, nums: List[int]) -> int:
-            result = {}
-            count = 0
-
-            for num in nums:
-                count = count + result.get(num, 0)
-                result[num] = result.get(num, 0) + 1
-            return count
-
-### [Two Sum](https://leetcode.com/problems/two-sum/description/)
-    Difficult : Easy
-
-    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-    You may assume that each input would have exactly one solution, and you may not use the same element twice.
-    You can return the answer in any order.
-
-    Example 1: 
-            Input: nums = [2,7,11,15], target = 9
-            Output: [0, 1]
-    Example 2: 
-            Input: nums = [3,2,4], target = 6
-            Output: [1, 2]
-    
-    class Solution: # O(n)
-        def twoSum(self, nums: List[int], target: int) -> List[int]:
-            map_result = {}
-            for index, value in enumerate(nums):
-                diff = target - value
-                if diff in map_result:
-                    return [map_result[diff], index]
-                map_result[index] = value
-
-### [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
-    Difficult : Easy
-
-    You are given an array prices where prices[i] is the price of a given stock on the ith day.
-    You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-    Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-
-    Example 1: 
-            Input: prices = [7,1,5,3,6,4]
-            Output: 5
-    Example 2: 
-            Input: prices = [7,6,4,3,1]
-            Output: 0
-    
-    class Solution: # O(n)
-        def maxProfit(self, prices: List[int]) -> int:
-            profit = 0
-            buy = prices[0]
-            for sell in prices[1:]:
-                if sell > buy:
-                    profit = max(profit, sell - buy)
-                else:
-                    buy = sell
-            return profit
 
 ### [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/description/)
     Difficult : Easy
@@ -93,29 +23,52 @@
                 set_nums.add(num)
             return False
 
-### [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-    Difficult : Medium
+### [Valid Anagram](https://leetcode.com/problems/valid-anagram/description/)
+    Difficult : Easy
 
-    Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
-    The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
-    You must write an algorithm that runs in O(n) time and without using the division operation.
+    Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+    An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
     Example 1: 
-            Input: nums = [1,2,3,4]
-            Output: [24,12,8,6]
+            Input: s = "anagram", t = "nagaram"
+            Output: true
     Example 2: 
-            Input: nums = [-1,1,0,-3,3]
-            Output: [0,0,9,0,0]
+            Input: nums = s = "rat", t = "cat
+            Output: false
     
-    class Solution: # O(n)
-        def productExceptSelf(self, nums: List[int]) -> List[int]:
-            length = len(nums)
-            products = [1] * length
-            for i in range(1, length):
-                products[i] = products[i - 1] * nums[i - 1]
-            right = nums[-1]
-            for i in range(length-2, -1, -1):
-                products[i] *= right
-                right *= nums[i]
+    class Solution:
+        class Solution:
+            def isAnagram(self, s: str, t: str) -> bool:
+                if len(s) != len(t):
+                    return False
+                check_s = {}
+                check_t = {}
+                for word in t:
+                    check_t[word] = check_t.get(word, 0) + 1
+                for word in s:
+                    check_s[word] = check_s.get(word, 0) + 1
+                return check_s == check_t
 
-            return products
+
+### [Two Sum](https://leetcode.com/problems/two-sum/description/)
+    Difficult : Easy
+
+    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    You may assume that each input would have exactly one solution, and you may not use the same element twice.
+    You can return the answer in any order.
+
+    Example 1: 
+            Input: nums = [2,7,11,15], target = 9
+            Output: [0, 1]
+    Example 2: 
+            Input: nums = [3,2,4], target = 6
+            Output: [1, 2]
+    
+    class Solution:
+        def twoSum(self, nums: List[int], target: int) -> List[int]:
+            map_result = {}
+            for index, value in enumerate(nums):
+                diff = target - value
+                if diff in map_result:
+                    return [map_result[diff], index]
+                map_result[index] = value
