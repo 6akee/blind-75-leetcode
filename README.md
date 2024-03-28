@@ -1,9 +1,10 @@
 # Leetcode Roadmap
 
-* [Arrays & Hashing](problems.md##arrays-&-hashing--string)
-  + [Contains Duplicate](problems.md#Contains-Duplicate)
-  + [Valid Anagram](problems.md#Valid-Anagram)
-  + [Two Sum](problems.md#Two-Sum)
+* [Arrays & Hashing](problems.md#arrays--hashing)
+  + [Contains Duplicate](problems.md#contains-duplicate)
+  + [Valid Anagram](problems.md#valid-anagram)
+  + [Two Sum](problems.md#two-sum)
+  + [Group Anagrams](problems.md#group-anagrams)
 
 
 
