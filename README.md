@@ -5,6 +5,7 @@
   + [Valid Anagram](problems.md#valid-anagram)
   + [Two Sum](problems.md#two-sum)
   + [Group Anagrams](problems.md#group-anagrams)
+  + [Top K Frequent Elements](problems.md#top-k-frequent-elements)
 
 
 
