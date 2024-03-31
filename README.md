@@ -7,6 +7,7 @@
   + [Group Anagrams](problems.md#group-anagrams)
   + [Top K Frequent Elements](problems.md#top-k-frequent-elements)
   + [Product of Array Except Self](problems.md#product-of-array-except-self)
+  + [Valid Sudoku](problems.md#valid-sudoku)
 
 
 
