@@ -9,6 +9,7 @@
   + [Product of Array Except Self](problems.md#product-of-array-except-self)
   + [Valid Sudoku](problems.md#valid-sudoku)
   + [Search Insert Position](problems.md#search-insert-position)
+  + [Plus One](problems.md#plus-one)
 
 
 

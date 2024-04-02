@@ -235,3 +235,32 @@
                 elif nums[mid] > target:
                     right = mid - 1
             return left
+
+
+### [Plus One](https://leetcode.com/problems/plus-one/description/)
+    Difficult : Easy
+
+    You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. 
+    The digits are ordered from most significant to least significant in left-to-right order. 
+    The large integer does not contain any leading 0's.
+
+    Increment the large integer by one and return the resulting array of digits.
+
+    Example 1: 
+            Input: nums = [1,2,3]
+            Output: [1,2,4]
+    Example 2: 
+            Input: nums = [9, 9]
+            Output: [1, 0, 0]
+    
+    class Solution:
+        def plusOne(self, digits: List[int]) -> List[int]:
+            if len(digits) == 1 and digits[0] == 9:
+                return [1, 0]
+
+            int_to_str = ""
+            for digit in digits:
+                int_to_str += str(digit)
+            int_to_str = int(int_to_str) + 1
+            
+            return [int(num) for num in str(int_to_str)]
