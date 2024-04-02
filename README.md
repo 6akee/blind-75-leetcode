@@ -8,6 +8,7 @@
   + [Top K Frequent Elements](problems.md#top-k-frequent-elements)
   + [Product of Array Except Self](problems.md#product-of-array-except-self)
   + [Valid Sudoku](problems.md#valid-sudoku)
+  + [Search Insert Position](problems.md#search-insert-position)
 
 
 
