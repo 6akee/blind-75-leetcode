@@ -87,3 +87,29 @@
                     return base[0:i]
 
         return base
+
+
+## [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)
+    Difficult : Easy
+
+    Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+    Example 1: 
+            Input: s = "()"
+            Output: true
+    Example 2: 
+            Input: s = "()[]{}"
+            Output: true
+    
+    class Solution:
+        def isValid(self, s: str) -> bool:
+            open_closed = dict(('()', '[]', '{}'))
+            stack = []
+    
+            for idx in s:
+                if idx in '([{':
+                    stack.append(idx)
+                elif len(stack) == 0 or idx != open_closed[stack.pop()]:
+                    return False
+            
+            return len(stack) == 0
