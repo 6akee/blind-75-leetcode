@@ -1,8 +1,6 @@
-# Top 100 Liked Questions
-* [Easy](problems.md#easy)
+# Blind 75 Leetcode problems
+* [Array](problems.md#array)
   + [Two Sum](problems.md#two-sum)
-  + [Roman to Integer](problems.md#roman-to-integer)
-  + [Longest Common Prefix](problems.md#longest-common-prefix)
-  + [Valid Parentheses](problems.md#valid-parentheses)
+  + [Best Time to Buy and Sell](problems.md#best-time-to-buy-and-sell-stock)
 
 
