@@ -1,4 +1,4 @@
-## Easy
+## Array
 
 
 ### [Two Sum](https://leetcode.com/problems/two-sum/description/)
@@ -27,89 +27,31 @@
 
 
 
-## [Roman to Integer](https://leetcode.com/problems/roman-to-integer/description/)
+### [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
     Difficult : Easy
 
-    Given a roman numeral, convert it to an integer.
+    You are given an array prices where prices[i] is the price of a given stock on the ith day.
+    You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
-    Example 1: 
-            Input: s = "III"
-            Output: 3
-    Example 2: 
-            Input: s = "LVIII"
-            Output: 58
+    Example 1:
+        Input: prices = [7,1,5,3,6,4]
+        Output: 5
+        Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
     
-    class Solution: # Time O(n) Space O(1)
-        def romanToInt(self, s: str) -> int:
-            # Словарь с римскими цифрами и их значениями
-            roman = {
-                'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 
-                'D': 500, 'M': 1000, 'IV': 4, 'IX': 9, 
-                'XL': 40, 'XC': 90, 'CD': 400, 'CM': 900
-            }
-            
-            i = 0  # Индекс для обхода строки
-            num = 0  # Итоговое число
-            
-            # Пока не пройдем всю строку
-            while i < len(s):
-                # Проверяем, есть ли комбинация из двух символов в словаре
-                if i + 1 < len(s) and s[i:i+2] in roman:
-                    num += roman[s[i:i+2]]  # Добавляем значение этой комбинации
-                    i += 2  # Пропускаем два символа
+    Example 2: 
+            Input: prices = [7,6,4,3,1]
+            Output: 0
+            Explanation: In this case, no transactions are done and the max profit = 0.
+    
+    class Solution:
+        def maxProfit(self, prices: List[int]) -> int:
+            profit = 0
+            buy = prices[0]
+    
+            for sell in prices[1:]:
+                if sell > buy:
+                   profit = max(profit, sell - buy)
                 else:
-                    num += roman[s[i]]  # Добавляем значение одного символа
-                    i += 1  # Пропускаем один символ
-            return num
-
-## [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/)
-    Difficult : Easy
-
-    Write a function to find the longest common prefix string amongst an array of strings.
-    If there is no common prefix, return an empty string "".
-
-    Example 1: 
-            Input: strs = ["flower","flow","flight"]
-            Output: "fl"
-    Example 2: 
-            Input: strs = ["dog","racecar","car"]
-            Output: ""
+                    buy = sell
     
-    class Solution:
-    def longestCommonPrefix(self, strs: List[str]) -> str: Time O(n*m) Space O(1)
-        if len(strs) == 0:
-            return ""
-
-        base = strs[0]
-        for i in range(len(base)):
-            for word in strs[1:]:
-                if (i == len(word)) or (word[i] != base[i]):
-                    return base[0:i]
-
-        return base
-
-
-## [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)
-    Difficult : Easy
-
-    Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-
-    Example 1: 
-            Input: s = "()"
-            Output: true
-    Example 2: 
-            Input: s = "()[]{}"
-            Output: true
-    
-    class Solution:
-        def isValid(self, s: str) -> bool:
-            open_closed = dict(('()', '[]', '{}'))
-            stack = []
-    
-            for idx in s:
-                if idx in '([{':
-                    stack.append(idx)
-                elif len(stack) == 0 or idx != open_closed[stack.pop()]:
-                    return False
-            
-            return len(stack) == 0
+            return profit
